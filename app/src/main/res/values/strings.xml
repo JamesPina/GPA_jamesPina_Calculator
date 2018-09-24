@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">GPA_jamesPina_Calculator</string>
+    <string name="btnCalcGPA">Compute GPA</string>
+    <string name="btnClear">Clear</string>
+    <string name="finalGrade"> </string>
+    <string name="grade1Input">Enter grade 1: </string>
+    <string name="grade2Input">Enter grade 2: </string>
+    <string name="grade3Input">Enter grade 3: </string>
+    <string name="grade4Input">Enter grade 4: </string>
+    <string name="grade5Input">Enter grade 5: </string>
+</resources>

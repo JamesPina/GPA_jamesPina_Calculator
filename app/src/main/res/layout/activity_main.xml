@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!--Two LinearLayouts for assigning background color of both the horizontal and vertical views-->
+    <!--Default Colors to white (#ffffff)-->
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/backgroundColorH"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#ffffff"
+        android:orientation="horizontal" />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/backgroundColorV"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#ffffff"
+        android:orientation="vertical" />
+
+    <!--Prompt for user to enter the first number-->
+    <!--Height of 45 and a text size of 30-->
+    <TextView
+        android:id="@+id/grade1Prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:text="@string/grade1Input"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--Input box for user to enter the first grade-->
+    <!--Default text to be (Grade #), Height also 45-->
+    <EditText
+        android:id="@+id/grade1"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:hint="Grade 1"
+        app:layout_constraintLeft_toRightOf="@id/grade1Prompt" />
+
+    <!--Prompt for user to enter the second number-->
+    <TextView
+        android:id="@+id/grade2Prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:text="@string/grade2Input"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/grade1Prompt" />
+
+    <!--Input box for user to enter the second grade-->
+    <EditText
+        android:id="@+id/grade2"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:hint="Grade 2"
+        app:layout_constraintLeft_toRightOf="@id/grade2Prompt"
+        app:layout_constraintTop_toBottomOf="@id/grade1" />
+
+    <!--Prompt for user to enter the third number-->
+    <TextView
+        android:id="@+id/grade3Prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:text="@string/grade3Input"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/grade2Prompt" />
+
+    <!--Input box for user to enter the third grade-->
+    <EditText
+        android:id="@+id/grade3"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:hint="Grade 3"
+        app:layout_constraintLeft_toRightOf="@id/grade3Prompt"
+        app:layout_constraintTop_toBottomOf="@id/grade2" />
+
+    <!--Prompt for user to enter the fourth number-->
+    <TextView
+        android:id="@+id/grade4Prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:text="@string/grade4Input"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/grade3Prompt" />
+
+    <!--Input box for user to enter the fourth grade-->
+    <EditText
+        android:id="@+id/grade4"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:hint="Grade 4"
+        app:layout_constraintLeft_toRightOf="@id/grade4Prompt"
+        app:layout_constraintTop_toBottomOf="@id/grade3" />
+
+    <!--Prompt for user to enter the fifth number-->
+    <TextView
+        android:id="@+id/grade5Prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:text="@string/grade5Input"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/grade4Prompt" />
+
+    <!--Input box for user to enter the fifth grade-->
+    <EditText
+        android:id="@+id/grade5"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:hint="Grade 5"
+        app:layout_constraintLeft_toRightOf="@id/grade5Prompt"
+        app:layout_constraintTop_toBottomOf="@id/grade4" />
+
+    <!--Button used to calculate Grade Point Average-->
+    <Button
+        android:id="@+id/btn_gpaCalc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="calculateGPA"
+        android:text="@string/btnCalcGPA"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/grade5Prompt" />
+
+    <!--Button to become visible after Compute GPA button is clicked, used to clear grade fields-->
+    <Button
+        android:id="@+id/btn_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="clearGPA"
+        android:text="@string/btnClear"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/grade5Prompt" />
+
+    <!--TextView for displaying the final grade after GPA calculation-->
+    <!--Default value of this field is empty ("") so no text appears upon creation of app, only after button press-->
+    <TextView
+        android:id="@+id/finalGrade"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:text="@string/finalGrade"
+        android:textColor="@color/colorPrimary"
+        android:textSize="40dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_gpaCalc" />
+
+</android.support.constraint.ConstraintLayout>
